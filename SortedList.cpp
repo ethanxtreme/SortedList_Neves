@@ -29,14 +29,47 @@ bool SortedList<T>::Contains(T someItem) {
     return false;
 }
 
+// begin    ok
+// middle   ok
+// end
+// empty
+
 template<class T>
-void SortedList<T>::PutItem(T item) {
+void SortedList<T>::AddItem(T item) {
+
+    int i;
+    for(i = 0;i<length;i++){
+        if(item < info[i]){
+            for(int j = length; j > i ; j--){
+                info[j] = info[j-1];
+            }
+            break;
+        }
+    }
+
+    info[i] = item;
+    length++;
 
 }
+
+// begin    ok
+// middle   ok
+// end      ok
+// empty    ok
 
 template<class T>
 void SortedList<T>::DeleteItem(T item) {
 
+    int i;
+    for(i = 0;i<length;i++){
+        if(item == info[i]){
+            for(int j = i+1; j < length; j++){
+                info[j-1] = info[j];
+                length--;
+                return;
+            }
+        }
+    }
 }
 
 template<class T>
