@@ -38,7 +38,7 @@ void SortedList<T>:: AddItem(T item) {
      * empty               ok
      */
 
-    //empty handlingh
+    //empty handlinghh
 
 //setting up because we add nodes a lot in our loops
 //i will keep the node adding in the loops for now
